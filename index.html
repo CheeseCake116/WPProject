@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>영화관 모아보기</title>
+    </head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+        }
+        nav {
+            background-color: slategray;
+            background-size: 100% 100%;
+            width: 200px;
+            height: 100%;
+            display: block;
+        }
+        section {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .home {
+            padding: 20px 20px;
+        }
+        .navMenu {
+            list-style: none;
+            padding: 20px 20px;
+        }
+        .navMenu li {
+            padding: 20px 0px;
+        }
+        .iframeHeader {
+            width: 100%;
+            height: 80px;
+        }
+        .iframeContent {
+            width: 100%;
+            height: 100%;
+        }
+        
+    </style>
+    <body>
+        <nav>
+            <h3 class=home>Moa Theater</h3>
+            <ul class=navMenu>
+                <a href="#" onclick="parent.iframeHeader.location.href='CGVHeader.html'; parent.iframeContent.location.href='CGVmain.html'"><li>CGV</li></a>
+                <a href="#" onclick="parent.iframeHeader.location.href='MEGAHeader.html'; parent.iframeContent.location.href='MEGAmain.html'"><li>메가박스</li></a>
+                <a href="#" onclick="parent.iframeHeader.location.href='LOTTEHeader.html'; parent.iframeContent.location.href='LOTTEmain.html'"><li>롯데시네마</li></a>
+            </div>
+        </nav>
+        <section>
+            <iframe name="iframeHeader" class="iframeHeader" src="CGVheader.html" frameborder="0" scrolling="no"></iframe>
+            <iframe name="iframeContent" class="iframeContent" src="CGVmain.html" frameborder="0" scrolling="no"></iframe>
+        </section>
+    </body>
+</html>
