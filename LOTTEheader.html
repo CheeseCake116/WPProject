@@ -2,21 +2,59 @@
     * {
         margin: 0;
         padding: 0;
+        color: black;
+        font-size: 20px;
+        font-weight: bold;
     }
     header {
-        background-color: wheat;
         width: 100%;
         height: 100%;
+        background-color: white;
+    }
+    ul {
+        list-style: none;
+        width: 40%;
+        padding: 0px 30%;
     }
     ul li {
         list-style-type: none;
+        display: inline;
+        width: 30%;
+        height: 60px;
+        padding: 20px 10%;
         float: left;
-        margin: 30px 250px;
+        text-align: center;
+    }
+    button {
+        background-color: #FFE1C5;
+        cursor: pointer;
+        border: 0px;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+    }
+    button:hover {
+        box-shadow: 500px 0 0 0 #ED1B24 inset;
+        color: white;
+    }
+    .logo {
+        position: absolute;
+        top: 30px;
+        left: 30px;
     }
 </style>
 <header>
+    <img class=logo src="images/LOTTE_logo.png">
     <ul>
-        <a href="LOTTEmain.html" target="iframeContent"><li>영화</li></a>
-        <a href="LOTTEtheater.html" target="iframeContent"><li>극장</li></a>
+        <li>
+            <a href="LOTTEmain.html" target="iframeContent">
+                <button>영화</button>
+            </a>
+        </li>
+        <li>
+            <a href="LOTTEtheater.html" target="iframeContent">
+                <button>극장</button>
+            </a>
+        </li>
     </ul>
 </header>
