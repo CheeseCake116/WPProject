@@ -1,3 +1,13 @@
+#!/usr/bin/perl -w
+
+use CGI qw(:standard -debug);
+use CGI::Carp qw(fatalsToBrowser);
+
+print header("Content-type: text/html; charset=utf-8");
+print start_html();
+print<<EOP;
+<!DOCTYPE html>
+
 <head>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -8,11 +18,11 @@
         margin: 0;
         padding: 0;
         text-align: center;
-        color: white;
+        color: black;
         font-family: 'Do Hyeon', sans-serif;
     }
     section {
-        background-color: rgb(50, 33, 96);
+        background-color: #FDFCF0;
         width: 100%;
         height: 100%;
     }
@@ -27,10 +37,45 @@
     table {
         margin: auto;
     }
+    p {
+        margin : 10px;
+        font-size : 130%;
+    }
+    .poster:hover {
+        opacity : 0.5;
+    }
 </style>
 <section>
-    <h2>메가박스 무비차트</h2>
-    <table cellspacing=20px>
+    <h2>CGV 무비차트</h2>
+    <table cellspacing=30px>
+        <tr>
+            <td>
+                <div class = poster>
+                    <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000084/84945/84945_1000.jpg">
+                    <p>듄</p>
+                </div>
+            </td>
+            <td>
+                <div class = poster>
+                    <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85121/85121_1000.jpg">
+                    <p>엘칸토 - 마법의 세계</p>
+                </div>
+            </td>
+            <td>
+                <div class = poster>
+                    <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85239/85239_1000.jpg">
+                    <p>연애 빠진 로맨스</p>
+                </div>
+            </td>
+            <td>
+                <div class = poster>
+                    <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83105/83105_1000.jpg">
+                    <p>유체이탈자</p>
+                </div>
+            </td>
+        </tr>
+        
+        <!--
         <tr>
             <td>
                 <div>
@@ -57,31 +102,9 @@
                 </div>
             </td>
         </tr>
-        <tr>
-            <td>
-                <div>
-                    <img src="images/samplePoster.jpg">
-                    <p>영화제목</p>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <img src="images/samplePoster.jpg">
-                    <p>영화제목</p>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <img src="images/samplePoster.jpg">
-                    <p>영화제목</p>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <img src="images/samplePoster.jpg">
-                    <p>영화제목</p>
-                </div>
-            </td>
-        </tr>
+        -->
     </table>
 </section>
+
+EOP
+print end_html();

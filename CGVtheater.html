@@ -1,30 +1,73 @@
+<head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+</head>
 <style>
     * {
         margin: 0;
         padding: 0;
         text-align: center;
         color: black;
+        font-family: 'Do Hyeon', sans-serif;
     }
     section {
         background-color: #FDFCF0;
         width: 100%;
         height: 100%;
     }
-    h3 {
+    h2 {
         padding: 20px;
+        text-align : left;
+        margin-left : 15%;
+    }
+    td {
+        text-align : left;
+    }
+    table {
+        width : 70%;
+        margin : auto;
+    }
+    td {
+        padding : 10px;
+        text-align : left;
+        background-color : rgba(0, 0, 0, 0);
+    }
+    td:hover {
+        background-color : rgba(0, 0, 0, 0.2);
     }
 </style>
 <section>
-    <h3>CGV 극장</h3>
-        <ul>
-            <li>CGV대구수성</li>
-            <li>CGV대구스타디움</li>
-            <li>CGV대구아카데미</li>
-            <li>CGV대구연경</li>
-            <li>CGV대구월성</li>
-            <li>CGV대구이시아</li>
-            <li>CGV대구칠곡</li>
-            <li>CGV대구한일</li>
-            <li>CGV대구현대</li>
-        </ul>
+<form action=cgv.cgi method=post>
+    <h2>CGV 극장 (대구)</h2>
+    <table cellspacing=20px>
+        <tr>
+        <td>CGV대구수성</td>
+        </tr>
+        <tr>
+        <td>CGV대구스타디움</td>
+        </tr>
+        <tr>
+        <td>CGV대구아카데미</td>
+        </tr>
+        <tr>
+        <td>CGV대구연경</td>
+        </tr>
+        <tr>
+        <td>CGV대구월성</td>
+        </tr>
+        <tr>
+        <td>CGV대구이시아</td>
+        </tr>
+        <tr>
+        <td>CGV대구칠곡</td>
+        </tr>
+        <tr>
+        <td>CGV대구한일</td>
+        </tr>
+        <tr>
+        <td>CGV대구현대</td>
+        </tr>
+    </table>
+</form>
 </section>

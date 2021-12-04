@@ -1,13 +1,18 @@
 <html>
     <head>
         <title>영화관 모아보기</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
     </head>
+
     <style>
         * {
             margin: 0;
             padding: 0;
             color: white;
             text-decoration-line: none;
+            font-family: 'Do Hyeon', sans-serif;
         }
         body {
             display: flex;
@@ -29,6 +34,8 @@
             height: 70px;
             padding: 30px 0px 0px 0px;
             text-align: center;
+            font-family: 'Do Hyeon', sans-serif;
+            font-size : 180%;
         }
         .navMenu {
             list-style: none;
@@ -50,33 +57,38 @@
         }
         button:hover {
             /* box-shadow:200px 0 0 0 rgba(0,0,0,0.5) inset; */
+            font-size : 110%;
             box-shadow: -5px 0 0 0 white inset;
         }
-        
     </style>
     <body>
         <nav>
-            <h3 class=home>KNU Theater</h3>
-            <ul class=navMenu>
+            <h3 class = home>KNU Theater</h3>
+            <ul class = navMenu>
                 <li>
-                    <a href="#" onclick="parent.iframeHeader.location.href='CGVheader.html'; parent.iframeContent.location.href='CGVmain.html'">
+                    <a href = "./CGVmain.cgi?" target = "iframeContent">
                         <button>CGV</button>
                     </a>
+                    <!--
+                    <a href="#" onclick="parent.iframeHeader.location.href='Headers/CGVheader.html'; parent.iframeContent.location.href='../CGVmain.cgi'">
+                        <button>CGV</button>
+                    </a>
+                -->
                 </li>
                 <li>
-                    <a href="#" onclick="parent.iframeHeader.location.href='MEGAheader.html'; parent.iframeContent.location.href='MEGAmain.html'">
+                    <a href="#" onclick="parent.iframeHeader.location.href='Headers/MEGAheader.html'; parent.iframeContent.location.href='../MEGAmain.html'">
                         <button>메가박스</button>
                     </a>
                 </li>
                 <li>    
-                    <a href="#" onclick="parent.iframeHeader.location.href='LOTTEheader.html'; parent.iframeContent.location.href='LOTTEmain.html'">
+                    <a href="#" onclick="parent.iframeHeader.location.href='Headers/LOTTEheader.html'; parent.iframeContent.location.href='../LOTTEmain.html'">
                         <button>롯데시네마</button>
                     </a>
                 </li>
             </div>
         </nav>
         <section>
-            <iframe name="iframeHeader" class="iframeHeader" src="CGVheader.html" frameborder="0" scrolling="no"></iframe>
+            <iframe name="iframeHeader" class="iframeHeader" src="Headers/CGVheader.html" frameborder="0" scrolling="no"></iframe>
             <iframe name="iframeContent" class="iframeContent" src="CGVmain.html" frameborder="0" scrolling="no"></iframe>
         </section>
     </body>
