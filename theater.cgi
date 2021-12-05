@@ -71,15 +71,33 @@ print <<EOP;
 </style>
 EOP
 
-
-
 print "<section>";
 print h2("My Theaters");
 print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n<table cellspacing=30px>";
 
+@cgvTheater = (
+    "CGV대구수성", "CGV대구스타디움", "CGV대구아카데미", "CGV대구연경", "CGV대구월성", 
+    "CGV대구이시아", "CGV대구칠곡", "CGV대구한일", "CGV대구현대"
+);
+@lotteTheater = (
+    "롯데시네마 대구광장", "롯데시네마 대구율하", "롯데시네마 대구현풍", "롯데시네마 동성로", "롯데시네마 프리미엄만경", 
+    "롯데시네마 성서", "롯데시네마 프리미엄칠곡", "롯데시네마 상인"
+);
+@megaTheater = (
+    "메가박스 대구이시아", "메가박스 대구", "메가박스 대구신세계", "메가박스 북대구"
+);
+
 foreach $theater (@theaters) {
     print "<tr>\n";
-    print "<td>$theater</td>";
+    index = substr($theater, 3, 1);
+    if (substr($theater, 0, 3) eq "cgv") {
+        print "<td>@cgvTheater[$index]</td>";
+    } elsif (if (substr($theater, 0, 3) eq "mega") {
+        #print "<td>@megaTheater[$index]</td>";
+    } else { # lotte
+        #print "<td>@lotteTheater[$index]</td>";
+    }
+
     print "</tr>\n";
 }
 print "</table></section>";
