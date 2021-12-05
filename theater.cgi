@@ -14,11 +14,23 @@ $flag = 0; # test whether exist or not
 foreach $theater (@theaters) {
     if ($theater eq $tName || $tName eq "null") {
         $flag = 1;
+    } elsif (substr($theater, 0, 3) eq "del") {
+        $flag = 2;
     }
 }
 if ($flag == 0) { # if tName is not exist
     open(OUT, ">>theater.out");
     print OUT "$tName\n";
+    close(OUT);
+}
+if ($flag == 2) { # wanna delete
+    open(OUT, ">theater.out");
+    foreach $name (@theaters) {
+        chomp $name;
+        if ($name ne substr($tName, 3, 3)) {
+            print OUT "$tName\n";
+        }
+    }
     close(OUT);
 }
 
@@ -95,7 +107,7 @@ foreach $theater (@theaters) {
     } else { 
         print "<td></td>";
     }
-
+    print "<td width = \"50px\" style = \"text-align : right;\"><a href = \"theater.cgi?name=del$tName\">삭제</a></td>\n";
     print "</tr>\n";
 }
 print "</table></section>";
