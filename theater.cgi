@@ -16,7 +16,7 @@ foreach $theater (@theaters) {
         $flag = 1;
     }
 }
-if (substr($theater, 0, 3) eq "del") {
+if (substr($tName, 0, 3) eq "del") {
     $flag = 2;
 }
 
@@ -30,7 +30,7 @@ if ($flag == 2) { # wanna delete
     foreach $name (@theaters) {
         chomp $name;
         if ($name ne substr($tName, 3, 4)) {
-            print OUT "substr($tName, 3, 4)\n";
+            print OUT "$name\n";
         }
     }
     close(OUT);
