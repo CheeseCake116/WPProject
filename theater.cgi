@@ -97,6 +97,11 @@ print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n<table cellspaci
     "메가박스 대구이시아", "메가박스 대구", "메가박스 대구신세계", "메가박스 북대구"
 );
 
+open(IN, "theater.out");
+@theaters = <IN>;
+close(IN);
+chomp @theaters;
+
 foreach $theater (@theaters) {
     print "<tr>\n";
     $index = substr($theater, 3, 1);
