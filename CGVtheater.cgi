@@ -83,16 +83,16 @@ close(IN);
 for ($i = 0; $i < $theaterCount; $i++) {
 	$flag = 0;
     foreach $theater (@theaters) {
-	if (substr($theater, 0, 3) eq "cgv" && substr($theater, 3, 1) eq $i) {
-		$flag = 1;
-	}
+        if (substr($theater, 0, 3) eq "cgv" && substr($theater, 3, 1) eq $i) {
+            $flag = 1;
+        }
     }
 	print "<tr>\n";
-    print "<td class = link><a href = \"@cgvTheaterLink[$i]\" target = \"blank\">@cgvTheater[$i]</a></td>\n";
+    print "<td class = link><a href = \"$cgvTheaterLink[$i]\" target = \"blank\">$cgvTheater[$i]</a></td>\n";
     if ($flag == 0) {
-    	print "<td width = \"50px\" style = \"text-align : right;\"><a href = \"theater.cgi?name=cgv$i\">추가하기</td>";
+    	print "<td width = \"50px\" style = \"text-align : right;\"><a href = \"theater.cgi?name=cgv$i\">추가하기</td>\n";
     } else { 
-	print "<td></td>";
+	    print "<td></td>";
     }
     print "</tr>\n";
 }

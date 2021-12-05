@@ -74,8 +74,25 @@ $theaterCount = @lotteTheater;
 print "<section>\n";
 print h2("롯데시네마 극장 (대구)");
 print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n<table cellspacing=20px>\n";
+
+open(IN, "theater.out");
+@theaters = <IN>;
+close(IN);
+
 for ($i = 0; $i < $theaterCount; $i++) {
-    print "<tr>\n<td><a href = \"@lotteTheaterLink[$i]\" target = \"blank\">@lotteTheater[$i]</a></td>\n</tr>\n";
+	$flag = 0;
+    foreach $theater (@theaters) {
+        if (substr($theater, 0, 3) eq "lot" && substr($theater, 3, 1) eq $i) {
+            $flag = 1;
+        }
+    }
+    print "<tr>\n<td><a href = \"$lotteTheaterLink[$i]\" target = \"blank\">$lotteTheater[$i]</a></td>\n";
+    if ($flag == 0) {
+    	print "<td width = \"50px\" style = \"text-align : right;\"><a href = \"theater.cgi?name=lot$i\">추가하기</td>\n";
+    } else { 
+	    print "<td></td>";
+    }
+    print "</tr>\n";
 }
 print "</table>\n</section>\n";
 print end_html();

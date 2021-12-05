@@ -16,7 +16,7 @@ foreach $theater (@theaters) {
         $flag = 1;
     }
 }
-if ($flag == 0) {
+if ($flag == 0) { # if tName is not exist
     open(OUT, ">>theater.out");
     print OUT "$tName\n";
     close(OUT);
@@ -91,11 +91,13 @@ foreach $theater (@theaters) {
     print "<tr>\n";
     $index = substr($theater, 3, 1);
     if (substr($theater, 0, 3) eq "cgv") {
-        print "<td>@cgvTheater[$index]</td>";
-    } elsif (substr($theater, 0, 3) eq "mega") {
-        #print "<td>@megaTheater[$index]</td>";
-    } else { # lotte
-        #print "<td>@lotteTheater[$index]</td>";
+        print "<td>$cgvTheater[$index]</td>";
+    } elsif (substr($theater, 0, 3) eq "meg") {
+        print "<td>$megaTheater[$index]</td>";
+    } elsif (substr($theater, 0, 3) eq "lot") {
+        print "<td>$lotteTheater[$index]</td>";
+    } else { 
+        print "<td></td>";
     }
 
     print "</tr>\n";
