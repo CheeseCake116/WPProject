@@ -85,7 +85,7 @@ for ($i = 0; $i < $movieCount; $i++) {
     if ($i == 3) { print "</tr><tr>"; }
 }
 print "</tr>\n";
-print "<tr><td colspan = '4' style = 'text-color : gray; text-align : right;'><a href = 'https://www.lottecinema.co.kr/NLCHS/Movie/List?flag=1' target = 'blank'>더보기</a></td></tr>\n";
+print "<tr><td colspan = '4' style = 'text-align : right;'><a href = 'https://www.lottecinema.co.kr/NLCHS/Movie/List?flag=1' target = 'blank'>더보기</a></td></tr>\n";
 print "</table></section>";
 print end_html();
 print "\n\n";
