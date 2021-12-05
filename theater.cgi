@@ -107,7 +107,7 @@ foreach $theater (@theaters) {
     } else { 
         print "<td></td>";
     }
-    print "<td width = \"50px\" style = \"text-align : right;\"><a href = \"theater.cgi?name=del$tName\">삭제</a></td>\n";
+    print "<td width = \"40px\" style = \"text-align : right;\"><a href = \"theater.cgi?name=del$theater\">삭제</a></td>\n";
     print "</tr>\n";
 }
 print "</table></section>";
