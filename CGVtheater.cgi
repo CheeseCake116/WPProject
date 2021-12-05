@@ -76,7 +76,10 @@ print "<section>\n";
 print h2("CGV 극장 (대구)");
 print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n<table cellspacing=20px>\n";
 for ($i = 0; $i < $theaterCount; $i++) {
-    print "<tr>\n<td><a href = \"@cgvTheaterLink[$i]\" target = \"blank\">@cgvTheater[$i]</a></td>\n</tr>\n";
+    print "<tr>\n";
+    print "<td class = link><a href = \"@cgvTheaterLink[$i]\" target = \"blank\">@cgvTheater[$i]</a></td>\n";
+    print "<td width = \"50px\" style = \"text-align : right;\"><a href = \"theater.cgi?name=@cgvTheater[$i]\">추가하기</td>";
+    print "</tr>\n";
 }
 print "</table>\n</section>\n";
 print end_html();
