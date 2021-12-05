@@ -12,7 +12,7 @@ chomp @theaters;
 
 $flag = 0; # test whether exist or not
 foreach $theater (@theaters) {
-    if ($theater eq $tName) {
+    if ($theater eq $tName || $tName eq "null") {
         $flag = 1;
     }
 }

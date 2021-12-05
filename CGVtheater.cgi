@@ -4,16 +4,11 @@ use CGI qw(:standard -debug);
 use CGI::Carp qw(fatalsToBrowser);
 
 print header("Content-type: text/html; charset=utf-8");
-print "\n";
-print start_html();
-# print "<!DOCTYPE html>";
-print "\n";
 print "<head>\n";
+print "<title>Untitled Document</title>";
 print "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n";
-print  "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n";
+print "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n";
 print "<link href=\"https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap\" rel=\"stylesheet\">\n";
-print "</head>\n";
-
 print <<EOP;
 <style>
     * {
@@ -72,6 +67,8 @@ EOP
 
 $theaterCount = @cgvTheater;
 
+print "</head>\n";
+print "<html><body>";
 print "<section>\n";
 print h2("CGV 극장 (대구)");
 print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n<table cellspacing=20px>\n";
@@ -90,12 +87,12 @@ for ($i = 0; $i < $theaterCount; $i++) {
 	print "<tr>\n";
     print "<td class = link><a href = \"$cgvTheaterLink[$i]\" target = \"blank\">$cgvTheater[$i]</a></td>\n";
     if ($flag == 0) {
-    	print "<td width = \"50px\" style = \"text-align : right;\"><a href = \"theater.cgi?name=cgv$i\">추가하기</td>\n";
+    	print "<td width = \"50px\" style = \"text-align : right;\"><a href = \"theater.cgi?name=cgv$i\">추가하기</a></td>\n";
     } else { 
 	    print "<td></td>";
     }
     print "</tr>\n";
 }
 print "</table>\n</section>\n";
-print end_html();
+print "</html></body>";
 print "\n\n";
