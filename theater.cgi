@@ -28,7 +28,7 @@ print header("Content-type: text/html; charset=utf-8");
 print start_html();
 
 foreach $theater (@theaters) {
-    print "<p>$thater</p>";
+    print "<p>$theater</p>";
 }
 
 print end_html();
