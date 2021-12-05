@@ -24,16 +24,11 @@ if ($flag == 0) { # if tName is not exist
 
 # background-color : slategray;
 print header("Content-type: text/html; charset=utf-8");
-print "\n";
-print start_html();
-# print "<!DOCTYPE html>";
-print "\n";
 print "<head>\n";
+print "<title>Untitled Document</title>";
 print "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n";
-print  "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n";
+print "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n";
 print "<link href=\"https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap\" rel=\"stylesheet\">\n";
-print "</head>\n";
-
 print <<EOP;
 <style>
     * {
@@ -70,7 +65,8 @@ print <<EOP;
     }
 </style>
 EOP
-
+print "</head>\n";
+print "<html><body>";
 print "<section>";
 print h2("My Theaters");
 print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n<table cellspacing=30px>";
@@ -103,5 +99,5 @@ foreach $theater (@theaters) {
     print "</tr>\n";
 }
 print "</table></section>";
-print end_html();
+print "</html></body>";
 print "\n\n";
