@@ -89,10 +89,10 @@ print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n<table cellspaci
 
 foreach $theater (@theaters) {
     print "<tr>\n";
-    index = substr($theater, 3, 1);
+    $index = substr($theater, 3, 1);
     if (substr($theater, 0, 3) eq "cgv") {
         print "<td>@cgvTheater[$index]</td>";
-    } elsif (if (substr($theater, 0, 3) eq "mega") {
+    } elsif (substr($theater, 0, 3) eq "mega") {
         #print "<td>@megaTheater[$index]</td>";
     } else { # lotte
         #print "<td>@lotteTheater[$index]</td>";
