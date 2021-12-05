@@ -27,8 +27,8 @@ if ($flag == 2) { # wanna delete
     open(OUT, ">theater.out");
     foreach $name (@theaters) {
         chomp $name;
-        if ($name ne substr($tName, 3, 3)) {
-            print OUT "$tName\n";
+        if ($name ne substr($tName, 3, 4)) {
+            print OUT "substr($tName, 3, 4)\n";
         }
     }
     close(OUT);
