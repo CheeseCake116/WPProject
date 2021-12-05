@@ -20,11 +20,11 @@ print <<EOP;
         margin: 0;
         padding: 0;
         text-align: center;
-        color: black;
+        color: white;
         font-family: 'Do Hyeon', sans-serif;
     }
     section {
-        background-color: #FDFCF0;
+        background-color: rgb(50, 33, 96);
         width: 100%;
         height: 100%;
     }
@@ -39,40 +39,32 @@ print <<EOP;
     table {
         margin: auto;
     }
-    p {
-        margin : 10px;
-        font-size : 130%;
-    }
-    .poster:hover {
-        opacity : 0.5;
-    }
 </style>
 EOP
 
-@cgvMovieName = ("듄", "엘칸토 - 마법의 세계", "연애 빠진 로맨스", "유체이탈자");
-@cgvMoviePoster = (
-    "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000084/84945/84945_1000.jpg",
-    "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85121/85121_1000.jpg",
-    "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85239/85239_1000.jpg",
-    "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83105/83105_1000.jpg"
+@megaMovieName = ("킬링 카인드: 킬러의 수제자", "돈 룩 업", "유체이탈자", "고스트버스터즈 라이즈");
+@megaMoviePoster = (
+    "https://img.megabox.co.kr/SharedImg/2021/11/19/OSwPwX3tSSnxJZMGljSs2tZESq6uFliO_420.jpg",
+    "https://img.megabox.co.kr/SharedImg/2021/12/02/E3UIW76SDtxGcGAOqHD7ZsXcJ0y856tf_420.jpg",
+    "https://img.megabox.co.kr/SharedImg/2021/11/03/tP5BVdJ82rerjg37crDMrNpehEFcPfuZ_420.jpg",
+    "https://img.megabox.co.kr/SharedImg/2021/11/12/ZL6rOSUwTNgWJLdJ0RM58Y4IsVs8m77h_420.jpg"
 );
-@cgvMovieLink = (
-    "http://www.cgv.co.kr/movies/detail-view/?midx=84945",
-    "http://www.cgv.co.kr/movies/detail-view/?midx=85121",
-    "http://www.cgv.co.kr/movies/detail-view/?midx=85239",
-    "http://www.cgv.co.kr/movies/detail-view/?midx=83105"
+@megaMovieLink = (
+    "https://www.megabox.co.kr/movie-detail?rpstMovieNo=21061000",
+    "https://www.megabox.co.kr/movie-detail?rpstMovieNo=21086300",
+    "https://www.megabox.co.kr/movie-detail?rpstMovieNo=21075100",
+    "https://www.megabox.co.kr/movie-detail?rpstMovieNo=01675700"
 );
-$movieCount = @cgvMovieName;
+$movieCount = @megaMovieName;
 
 print "<section>";
-print h2("CGV 무비차트");
+print h2("메가박스 무비차트");
 print "<table cellspacing=30px>";
-
 print "<tr>\n";
 for ($i = 0; $i < $movieCount; $i++) {
     print "<td>\n<div class = poster>\n";
-    print "<a href = \"@cgvMovieLink[$i]\" target = \"blank\"><img src = \"@cgvMoviePoster[$i]\"></a>\n";
-    print "<p><a href = \"@cgvMovieLink[$i]\" target = \"blank\">@cgvMovieName[$i]</a></p>\n";
+    print "<a href = \"@megaMovieLink[$i]\" target = \"blank\"><img src = \"@megaMoviePoster[$i]\"></a>\n";
+    print "<p><a href = \"@megaMovieLink[$i]\" target = \"blank\">@megaMovieName[$i]</a></p>\n";
     print "</div>\n</td>\n";
 }
 print "</tr>\n";

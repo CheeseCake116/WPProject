@@ -20,13 +20,7 @@ print <<EOP;
         margin: 0;
         padding: 0;
         text-align: center;
-        color: black;
         font-family: 'Do Hyeon', sans-serif;
-    }
-    section {
-        background-color: #FDFCF0;
-        width: 100%;
-        height: 100%;
     }
     h2 {
         padding: 20px;
@@ -39,40 +33,35 @@ print <<EOP;
     table {
         margin: auto;
     }
-    p {
-        margin : 10px;
-        font-size : 130%;
-    }
     .poster:hover {
         opacity : 0.5;
     }
 </style>
 EOP
 
-@cgvMovieName = ("듄", "엘칸토 - 마법의 세계", "연애 빠진 로맨스", "유체이탈자");
-@cgvMoviePoster = (
-    "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000084/84945/84945_1000.jpg",
-    "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85121/85121_1000.jpg",
-    "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85239/85239_1000.jpg",
-    "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83105/83105_1000.jpg"
+@lotteMovieName = ("연애 빠진 로맨스", "유체이탈자", "돈 룩 업", "엔칸토: 마법의 세계");
+@lotteMoviePoster = (
+    "https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202111/18081_103_1.jpg",
+    "https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202111/18093_103_1.jpg",
+    "https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202112/18309_103_1.jpg",
+    "https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202111/18041_103_1.jpg"
 );
-@cgvMovieLink = (
-    "http://www.cgv.co.kr/movies/detail-view/?midx=84945",
-    "http://www.cgv.co.kr/movies/detail-view/?midx=85121",
-    "http://www.cgv.co.kr/movies/detail-view/?midx=85239",
-    "http://www.cgv.co.kr/movies/detail-view/?midx=83105"
+@lotteMovieLink = (
+    "https://www.lottecinema.co.kr/NLCHS/Movie/MovieDetailView?movie=18081",
+    "https://www.lottecinema.co.kr/NLCHS/Movie/MovieDetailView?movie=18093",
+    "https://www.lottecinema.co.kr/NLCHS/Movie/MovieDetailView?movie=18309",
+    "https://www.lottecinema.co.kr/NLCHS/Movie/MovieDetailView?movie=18041"
 );
-$movieCount = @cgvMovieName;
+$movieCount = @lotteMovieName;
 
 print "<section>";
-print h2("CGV 무비차트");
+print h2("롯데시네마 무비차트");
 print "<table cellspacing=30px>";
-
 print "<tr>\n";
 for ($i = 0; $i < $movieCount; $i++) {
     print "<td>\n<div class = poster>\n";
-    print "<a href = \"@cgvMovieLink[$i]\" target = \"blank\"><img src = \"@cgvMoviePoster[$i]\"></a>\n";
-    print "<p><a href = \"@cgvMovieLink[$i]\" target = \"blank\">@cgvMovieName[$i]</a></p>\n";
+    print "<a href = \"@lotteMovieLink[$i]\" target = \"blank\"><img src = \"@lotteMoviePoster[$i]\"></a>\n";
+    print "<p><a href = \"@lotteMovieLink[$i]\" target = \"blank\">@lotteMovieName[$i]</a></p>\n";
     print "</div>\n</td>\n";
 }
 print "</tr>\n";
