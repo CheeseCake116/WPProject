@@ -78,7 +78,7 @@ print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n<table cellspaci
 for ($i = 0; $i < $theaterCount; $i++) {
     print "<tr>\n";
     print "<td class = link><a href = \"@cgvTheaterLink[$i]\" target = \"blank\">@cgvTheater[$i]</a></td>\n";
-    print "<td width = \"50px\" style = \"text-align : right;\"><a href = \"theater.cgi?name=@cgvTheater[$i]\">추가하기</td>";
+    print "<td width = \"50px\" style = \"text-align : right;\"><a href = \"theater.cgi?name=cgv$i\">추가하기</td>";
     print "</tr>\n";
 }
 print "</table>\n</section>\n";
