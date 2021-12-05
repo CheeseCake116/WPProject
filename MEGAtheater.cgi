@@ -23,6 +23,9 @@ print <<EOP;
         color: white;
         font-family: 'Do Hyeon', sans-serif;        
     }
+    body {
+        height : 1200px;
+    }
     section {
         background-color: rgb(50, 33, 96);
         width: 100%;
@@ -63,7 +66,7 @@ $theaterCount = @megaTheater;
 
 print "<section>\n";
 print h2("메가박스 극장 (대구)");
-print "<table cellspacing=20px>\n";
+print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n<table cellspacing=20px>\n";
 for ($i = 0; $i < $theaterCount; $i++) {
     print "<tr>\n<td><a href = \"@megaTheaterLink[$i]\" target = \"blank\">@megaTheater[$i]</a></td>\n</tr>\n";
 }

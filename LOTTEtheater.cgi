@@ -23,6 +23,9 @@ print <<EOP;
         color: black;
         font-family: 'Do Hyeon', sans-serif;
     }
+    body {
+        height : 1200px;
+    }
     section {
         background-color: white;
         width: 100%;
@@ -30,6 +33,8 @@ print <<EOP;
     }
     h2 {
         padding: 20px;
+        text-align : left;
+        margin-left : 15%;
     }
     td {
         text-align : left;
@@ -68,7 +73,7 @@ $theaterCount = @lotteTheater;
 
 print "<section>\n";
 print h2("롯데시네마 극장 (대구)");
-print "<table cellspacing=20px>\n";
+print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n<table cellspacing=20px>\n";
 for ($i = 0; $i < $theaterCount; $i++) {
     print "<tr>\n<td><a href = \"@lotteTheaterLink[$i]\" target = \"blank\">@lotteTheater[$i]</a></td>\n</tr>\n";
 }
