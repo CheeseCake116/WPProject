@@ -52,47 +52,54 @@ print <<EOP;
         text-align : left;
         background-color : rgba(0, 0, 0, 0);
     }
+    div {
+        margin : 10px;
+    }
+    .link {
+            background-color : rgba(0, 0, 0, 0.2);
+    }
+    .link:hover {
+        background-color : rgba(0, 0, 0, 0.5);
+    }
 </style>
 EOP
 print "</head>\n";
 print "<html><body>";
 print "<section>";
-print h2("Information");
-print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n";
 print "<table cellspacing=30px>";
-print "<tr><td colspan = '3' style = \"text-algin : left;\">";
-print h3("About us");
+print "<tr><td colspan = '3' style = \"text-align : left;\">";
+print h2("About us");
+print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n";
 print "</td></tr>\n";
-
 print "<tr>";
 print "<td><div>";
 print "<img src=\"images/Jinuk_Kwak-icon.png\" style = \"box-sizing: inherit;\">";
 print h3("Jinuk Kwak");
 print h4("7ehrtnfl\@naver.com");
-print "<a href=\"http://widit.knu.ac.kr/~7ehrtnfl/ithw/hw5-1.htm\">personal page</a>";
+print "<a href=\"http://widit.knu.ac.kr/~7ehrtnfl/ithw/hw5-1.htm\" class = link>personal page</a>";
 print "</div></td>";
 
 print "<td><div>";
 print "<img src=\"images/Hyoeun_Sim-icon.png\" style = \"box-sizing: inherit;\">";
 print h3("Hyoeun Sim");
 print h4("f2921641\@naver.com");
-print "<a href=\"http://widit.knu.ac.kr/~f2921641/ithw/hw5.htm\">personal page</a>";
+print "<a href=\"http://widit.knu.ac.kr/~f2921641/ithw/hw5.htm\" class = link>personal page</a>";
 print "</div></td>";
 
 print "<td><div>";
 print "<img src=\"images/Gyurim_Park-icon.png\" style = \"box-sizing: inherit;\">";
 print h3("Gyurim Park");
 print h4("guy021898\@naver.com");
-print "<a href=\"http://widit.knu.ac.kr/~guy021898/ithw/hw5.htm\">personal page</a>";
+print "<a href=\"http://widit.knu.ac.kr/~guy021898/ithw/hw5.htm\" class = link>personal page</a>";
 print "</div></td>";
 print "</tr>";
 
 print "<tr>";
+print "<tr><td colspan = '3' style = \"text-align : left;\">";
+print h2("Source code");
 print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n";
-print "<td><td colspan = '3' style = \"text-algin : left;\">";
-print h3("Source code");
-print "</td>";
-print "</tr>";
+print "</td></tr>\n";
+print "<tr><td colspan = '3'>Git hub link</td></tr>"
 
 print "</html></body>";
 print "\n\n";
