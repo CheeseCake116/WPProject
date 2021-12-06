@@ -63,10 +63,11 @@ print <<EOP;
     }
     .link {
         padding : 5px;
-        background-color : rgba(0, 0, 0, 0.5);
+        margin-top : 10px;
+        background-color : rgba(0, 0, 0, 0.4);
     }
     .link:hover {
-        background-color : rgba(0, 0, 0, 0.7);
+        background-color : rgba(0, 0, 0, 0.6);
     }
 </style>
 EOP
@@ -81,26 +82,29 @@ print "<td><div>";
 print "<img src=\"images/Jinuk_Kwak-icon.png\" style = \"box-sizing: inherit;\">";
 print h3("Jinuk Kwak");
 print h4("7ehrtnfl\@naver.com");
-print "<a href=\"http://widit.knu.ac.kr/~7ehrtnfl/ithw/hw5-1.htm\" class = link>personal page</a>";
+print "<br><a href=\"http://widit.knu.ac.kr/~7ehrtnfl/ithw/hw5-1.htm\" class = link>personal page</a>";
 print "</div></td>";
 
 print "<td><div>";
 print "<img src=\"images/Hyoeun_Sim-icon.png\" style = \"box-sizing: inherit;\">";
 print h3("Hyoeun Sim");
 print h4("f2921641\@naver.com");
-print "<a href=\"http://widit.knu.ac.kr/~f2921641/ithw/hw5.htm\" class = link>personal page</a>";
+print "<br><a href=\"http://widit.knu.ac.kr/~f2921641/ithw/hw5.htm\" class = link>personal page</a>";
 print "</div></td>";
 
 print "<td><div>";
 print "<img src=\"images/Gyurim_Park-icon.png\" style = \"box-sizing: inherit;\">";
 print h3("Gyurim Park");
 print h4("guy021898\@naver.com");
-print "<a href=\"http://widit.knu.ac.kr/~guy021898/ithw/hw5.htm\" class = link>personal page</a>";
+print "<br><a href=\"http://widit.knu.ac.kr/~guy021898/ithw/hw5.htm\" class = link>personal page</a>";
 print "</div></td>";
 print "</tr>";
 print "</table>\n";
+
 print h2("Source code");
 print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n";
-print "<a href = \"https://github.com/CheeseCake116/WPProject\">SourceCode</a>";
+print "<a href = \"https://github.com/CheeseCake116/WPProject\" target = \"blank\" style = \"float: left; margin-left : 20%; margin-top : 20px;\">";
+print "<img src = \"images/github.jpg\" width = 160px></a>";
+
 print "</section>\n</html></body>";
 print "\n\n";
