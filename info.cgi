@@ -60,39 +60,39 @@ print "<section>";
 print h2("Information");
 print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n";
 print "<table cellspacing=30px>";
-print "<tr>\n";
+print "<tr><td colspan = '3' style = \"text-algin : left;\">";
 print h3("About us");
-print "</tr>\n";
-print <<EOP;
-    <div class="row" style = "display : flex; margin : 2% 15%;">
-        <div class="column">
-            <div>
-            <img src="images/Jinuk_Kwak-icon.png" style =" box-sizing: inherit;">
-                <h2>Jinuk Kwak</h2>
-                <h4>7ehrtnfl@naver.com</h4><br>
-        <button style = "width : 80%"><a href="http://widit.knu.ac.kr/~7ehrtnfl/ithw/hw5-1.htm">personal page</a></button>
-            </div>
-        </div>
+print "</td></tr>\n";
 
-        <div class="column">
-            <div>
-            <img src="images/Hyoeun_Sim-icon.png" style =" box-sizing: inherit;">
-                <h2>Hyoeun Sim</h2>
-                <h4>f2921641@naver.com</h4><br>
-        <button style = "width : 80%"><a href="http://widit.knu.ac.kr/~f2921641/ithw/hw5.htm">personal page</a></button>
-            </div>
-        </div>
+print "<tr>";
+print "<td><div>";
+print "<img src=\"images/Jinuk_Kwak-icon.png\" style = \"box-sizing: inherit;\">";
+print h3("Jinuk Kwak");
+print h4("7ehrtnfl\@naver.com");
+print "<a href=\"http://widit.knu.ac.kr/~7ehrtnfl/ithw/hw5-1.htm\">personal page</a>";
+print "</div></td>"
 
-        <div class="column">
-            <div>
-            <img src="images/Gyurim_Park-icon.png" style =" box-sizing: inherit;">
-            <div>
-                <h2>Gyurim Park</h2>
-                <h4>guy021898@naver.com</h4><br>
-        <button style = "width : 80%"><a href="http://widit.knu.ac.kr/~guy021898/ithw/hw5.htm">personal page</a></button>
-            </div>
-        </div>
-    </div>
-EOP
+print "<td><div>";
+print "<img src=\"images/Hyoeun_Sim-icon.png\" style = \"box-sizing: inherit;\">";
+print h3("Hyoeun Sim");
+print h4("f2921641\@naver.com");
+print "<a href=\"http://widit.knu.ac.kr/~f2921641/ithw/hw5.htm\">personal page</a>";
+print "</div></td>"
+
+print "<td><div>";
+print "<img src=\"images/Gyurim_Park-icon.png\" style = \"box-sizing: inherit;\">";
+print h3("Gyurim Park");
+print h4("guy021898\@naver.com");
+print "<a href=\"http://widit.knu.ac.kr/~guy021898/ithw/hw5.htm\">personal page</a>";
+print "</div></td>"
+print "</tr>";
+
+print "<tr>";
+print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n";
+print "<td><td colspan = '3' style = \"text-algin : left;\">";
+print h3("Source code");
+print "</td>";
+print "</tr>";
+
 print "</html></body>";
 print "\n\n";
