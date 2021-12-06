@@ -99,7 +99,7 @@ print "<tr><td colspan = '3' style = \"text-align : left;\">";
 print h2("Source code");
 print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n";
 print "</td></tr>\n";
-print "<tr><td colspan = '3'>Git hub link</td></tr>"
+print "<tr><td colspan = '3'>Git hub link</td></tr>";
 
 print "</html></body>";
 print "\n\n";
