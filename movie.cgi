@@ -28,8 +28,9 @@ if ($flag == 0) { # if tName is not exist
 if ($flag == 2) { # wanna delete
     open(OUT, ">movie.out");
     foreach $name (@movies) {
-        if ($name ne substr($mName, 3, 4)) {
-            print OUT "$name";
+        chomp $name;
+        if ($name ne substr($tName, 3, 4)) {
+            print OUT "$name\n";
         }
     }
     close(OUT);
