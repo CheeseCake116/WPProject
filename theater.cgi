@@ -134,13 +134,13 @@ foreach $theater (@theaters) {
     $index = substr($theater, 3, 1);
     if (substr($theater, 0, 3) eq "cgv") {
         print "<td>$cgvTheater[$index]</td>\n";
-        print "<td width = \"40px\" style = \"text-align : right;\"><a href = \"$cgvTheaterWay[$index]\">길찾기</a></td>";
+        print "<td width = \"40px\" style = \"text-align : right;\"><a href = \"$cgvTheaterWay[$index]\" target = \"blank\">길찾기</a></td>";
     } elsif (substr($theater, 0, 3) eq "meg") {
         print "<td>$megaTheater[$index]</td>";
-        print "<td width = \"40px\" style = \"text-align : right;\"><a href = \"$megaTheaterWay[$index]\">길찾기</a></td>";
+        print "<td width = \"40px\" style = \"text-align : right;\"><a href = \"$megaTheaterWay[$index]\" target = \"blank\">길찾기</a></td>";
     } elsif (substr($theater, 0, 3) eq "lot") {
         print "<td>$lotteTheater[$index]</td>";
-        print "<td width = \"40px\" style = \"text-align : right;\"><a href = \"$lotteTheaterWay[$index]\">길찾기</a></td>";
+        print "<td width = \"40px\" style = \"text-align : right;\"><a href = \"$lotteTheaterWay[$index]\" target = \"blank\">길찾기</a></td>";
     } else { 
         print "<td></td>";
     }
