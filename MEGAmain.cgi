@@ -80,14 +80,32 @@ $movieCount = @megaMovieName;
 print "<section>";
 print h2("메가박스 무비차트");
 print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n<table cellspacing=30px>";
+
+open(IN, "movie.out");
+@movies = <IN>;
+close(IN);
+
 print "<tr>\n";
 for ($i = 0; $i < $movieCount; $i++) {
+    $flag = 0;
+    foreach $movie (@movies) {
+        if (substr($movie, 0, 3) eq "cgv" && substr($movie, 3, 1) eq $i) {
+            $flag = 1;
+        }
+    }
     $r = $i + 1;
     print "<td>\n<p class = rank>No. $r</p>\n<div class = poster>\n";
     print "<a href = \"$megaMovieLink[$i]\" target = \"blank\"><img src = \"$megaMoviePoster[$i]\"></a>\n";
-    print "<p><a href = \"$megaMovieLink[$i]\" target = \"blank\">$megaMovieName[$i]</a></p>\n";
-    print "</div>\n<p style = \"text-align : right; font-size : 100%;\"><a href = \"movie.cgi?name=meg$i\">추가하기</a></a></td>\n";
-    if ($i == 3) { print "</tr><tr>"; }
+    print "<p><a href = \"$megaMovieLink[$i]\" target = \"blank\">$megaMovieName[$i]</a></p>\n</div>\n";
+    if ($flag == 0) {
+        print "<p style = \"text-align : right; font-size : 100%;\"><a href = \"movie.cgi?name=meg$i\">추가하기</a></p>\n";
+    } else {
+        print "<p style = \"font-size : 100%; text-align : right;\">이미 추가된 영화</p>"
+    }
+    print "</td>";
+    
+    if ($i == 3) { print "</tr><tr>"; 
+    }
 }
 print "</tr>\n";
 print "<tr><td colspan = '4' style = 'text-align : right;'><a href = 'https://www.megabox.co.kr/movie' target = 'blank'>더보기</a></td></tr>\n";
