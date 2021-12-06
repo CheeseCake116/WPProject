@@ -76,7 +76,7 @@ for ($i = 0; $i < $movieCount; $i++) {
     print "<td>\n<p class = rank>No. $r</p>\n<div class = poster>\n";
     print "<a href = \"$lotteMovieLink[$i]\" target = \"blank\"><img src = \"$lotteMoviePoster[$i]\"></a>\n";
     print "<p><a href = \"$lotteMovieLink[$i]\" target = \"blank\">$lotteMovieName[$i]</a></p>\n";
-    print "</div>\n<p style = \"text-align : right; font-size : 100%;\"><a href = \"theater.cgi?name=lot$i\">추가하기</a></a></td>\n";
+    print "</div>\n<p style = \"text-align : right; font-size : 100%;\"><a href = \"movie.cgi?name=lot$i\">추가하기</a></a></td>\n";
     if ($i == 3) { print "</tr><tr>"; }
 }
 print "</tr>\n";

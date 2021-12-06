@@ -92,7 +92,7 @@ for ($i = 0; $i < $movieCount; $i++) {
     print "<td>\n<p class = rank>No. $r</p>\n<div class = poster>\n";
     print "<a href = \"$cgvMovieLink[$i]\" target = \"blank\"><img src = \"$cgvMoviePoster[$i]\"></a>\n";
     print "<p><a href = \"$cgvMovieLink[$i]\" target = \"blank\">$cgvMovieName[$i]</a></p>\n";
-    print "</div>\n<p style = \"text-align : right; font-size : 100%;\"><a href = \"theater.cgi?name=cgv$i\">추가하기</a></a></td>\n";
+    print "</div>\n<p style = \"text-align : right; font-size : 100%;\"><a href = \"movie.cgi?name=cgv$i\">추가하기</a></a></td>\n";
     if ($i == 3) { print "</tr><tr>"; }
 }
 print "</tr>\n";
