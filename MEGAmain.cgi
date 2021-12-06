@@ -89,7 +89,7 @@ print "<tr>\n";
 for ($i = 0; $i < $movieCount; $i++) {
     $flag = 0;
     foreach $movie (@movies) {
-        if (substr($movie, 0, 3) eq "cgv" && substr($movie, 3, 1) eq $i) {
+        if (substr($movie, 0, 3) eq "meg" && substr($movie, 3, 1) eq $i) {
             $flag = 1;
         }
     }
