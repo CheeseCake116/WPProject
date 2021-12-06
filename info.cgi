@@ -98,10 +98,9 @@ print h4("guy021898\@naver.com");
 print "<a href=\"http://widit.knu.ac.kr/~guy021898/ithw/hw5.htm\" class = link>personal page</a>";
 print "</div></td>";
 print "</tr>";
-print "</table>\n</section>\n";
-
+print "</table>\n";
 print h2("Source code");
 print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n";
 print "<a href = \"https://github.com/CheeseCake116/WPProject\">SourceCode</a>";
-print "</html></body>";
+print "</section>\n</html></body>";
 print "\n\n";
