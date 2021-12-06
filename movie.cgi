@@ -28,9 +28,8 @@ if ($flag == 0) { # if tName is not exist
 if ($flag == 2) { # wanna delete
     open(OUT, ">movie.out");
     foreach $name (@movies) {
-        chomp $name;
         if ($name ne substr($mName, 3, 4)) {
-            print OUT "$name\n";
+            print OUT "$name";
         }
     }
     close(OUT);
@@ -69,13 +68,21 @@ print <<EOP;
         width : 70%;
         margin : auto;
     }
+    img {
+        width: 200px;
+    }
+    img:hover {
+        background-color : rgba(0, 0, 0, 0.2);
+    }
+    .link {
+            background-color : rgba(0, 0, 0, 0.2);
+    }
+    .link:hover {
+        background-color : rgba(0, 0, 0, 0.5);
+    }
     td {
-        padding : 10px;
         text-align : left;
         background-color : rgba(0, 0, 0, 0);
-    }
-    td:hover {
-        background-color : rgba(0, 0, 0, 0.2);
     }
 </style>
 EOP
@@ -100,6 +107,17 @@ print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n<table cellspaci
     "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85125/85125_320.jpg",
     "https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85234/85234_320.jpg"
 );
+@cgvMovieLink = (
+    "http://www.cgv.co.kr/movies/detail-view/?midx=84945",
+    "http://www.cgv.co.kr/movies/detail-view/?midx=85121",
+    "http://www.cgv.co.kr/movies/detail-view/?midx=85239",
+    "http://www.cgv.co.kr/movies/detail-view/?midx=83105",
+
+    "http://www.cgv.co.kr/movies/detail-view/?midx=83033",
+    "http://www.cgv.co.kr/movies/detail-view/?midx=85261",
+    "http://www.cgv.co.kr/movies/detail-view/?midx=85125",
+    "http://www.cgv.co.kr/movies/detail-view/?midx=85234"
+);
 @lotteMovieName = (
     "유체이탈자", "연애 빠진 로맨스", "엔칸토: 마법의 세계", "고스트버스터즈 라이즈",
     "듄", "베네데타", "이터널스", "라스트 나잇 인 소호"
@@ -114,9 +132,19 @@ print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n<table cellspaci
     "https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202111/17885_103_1.jpg",
     "https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202112/18156_103_1.jpg"
 );
+@lotteMovieLink = (
+    "https://www.lottecinema.co.kr/NLCHS/Movie/MovieDetailView?movie=18093",
+    "https://www.lottecinema.co.kr/NLCHS/Movie/MovieDetailView?movie=18081",
+    "https://www.lottecinema.co.kr/NLCHS/Movie/MovieDetailView?movie=18041",
+    "https://www.lottecinema.co.kr/NLCHS/Movie/MovieDetailView?movie=15368",
+    "https://www.lottecinema.co.kr/NLCHS/Movie/MovieDetailView?movie=17864",
+    "https://www.lottecinema.co.kr/NLCHS/Movie/MovieDetailView?movie=18064",
+    "https://www.lottecinema.co.kr/NLCHS/Movie/MovieDetailView?movie=17885",
+    "https://www.lottecinema.co.kr/NLCHS/Movie/MovieDetailView?movie=18156"
+);
 @megaMovieName = (
     "킬링 카인드: 킬러의 수제자", "돈 룩 업", "태일이", "너에게 가는길",
-    "고스트버스터즈 라이즈", "유체이탈자", "라스트 나잇 인 소호", "언힐러"    
+    "유체이탈자", "고스트버스터즈 라이즈", "라스트 나잇 인 소호", "언힐러"    
 );
 @megaMoviePoster = (
     "https://img.megabox.co.kr/SharedImg/2021/11/19/OSwPwX3tSSnxJZMGljSs2tZESq6uFliO_420.jpg",
@@ -128,27 +156,51 @@ print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n<table cellspaci
     "https://img.megabox.co.kr/SharedImg/2021/11/08/3ZcfD8ozZSG8r0uGKs1Aib4h7u6Gb0ZF_420.jpg",
     "https://img.megabox.co.kr/SharedImg/2021/11/26/UgC0ynJIDkgMHevC4Z1c4isRIRsjsUMT_420.jpg",
 );
+@megaMovieLink = (
+    "https://www.megabox.co.kr/movie-detail?rpstMovieNo=21061000",
+    "https://www.megabox.co.kr/movie-detail?rpstMovieNo=21086300",
+    "https://www.megabox.co.kr/movie-detail?rpstMovieNo=21075400",
+    "https://www.megabox.co.kr/movie-detail?rpstMovieNo=21073200",
+    "https://www.megabox.co.kr/movie-detail?rpstMovieNo=21075100",
+    "https://www.megabox.co.kr/movie-detail?rpstMovieNo=01675700",
+    "https://www.megabox.co.kr/movie-detail?rpstMovieNo=21077200",
+    "https://www.megabox.co.kr/movie-detail?rpstMovieNo=21086000"
+);
 
 open(IN, "movie.out");
 @movies = <IN>;
 close(IN);
 chomp @movies;
 
+$colCount = 1;
+print "<tr>\n";
 foreach $movie (@movies) {
-    print "<tr>\n";
     $index = substr($movie, 3, 1);
     if (substr($movie, 0, 3) eq "cgv") {
-        print "<td>$cgvMovieName[$index]</td>";
+        print "<td>\n<image src = \"$cgvMoviePoster[$index]\">\n</td>\n";
+        print "<td style = \"width : 200px;\">\n<p>CGV</p><p style = \"margin : 10px; font-size : 100%;\">$cgvMovieName[$index]</p><hr><br><br>\n";
+        print "<p class = link><a href = \"$cgvMovieLink[$index]\" target = \"blank\">예매하기</a></p><br>\n";
+        print "<p class = link><a href = \"movie.cgi?name=del$movie\">삭제</a></p>\n</td><td></td>\n";
     } elsif (substr($movie, 0, 3) eq "meg") {
-        print "<td>$megaMovieName[$index]</td>";
+        print "<td>\n<image src = \"$megaMoviePoster[$index]\">\n</td>\n";
+        print "<td style = \"width : 200px;\">\n<p>MEGABOX</p><p style = \"margin : 10px; font-size : 100%;\">$megaMovieName[$index]</p><hr><br><br>\n";
+        print "<p class = link><a href = \"$megaMovieLink[$index]\" target = \"blank\">예매하기</a></p><br>\n";
+        print "<p class = link><a href = \"movie.cgi?name=del$movie\">삭제</a></p>\n</td><td></td>\n";
     } elsif (substr($movie, 0, 3) eq "lot") {
-        print "<td>$lotteMovieName[$index]</td>";
+        print "<td>\n<image src = \"$lotteMoviePoster[$index]\">\n</td>\n";
+        print "<td style = \"width : 200px;\">\n<p>LOTTE CINEMA</p><p style = \"margin : 10px; font-size : 100%;\">$lotteMovieName[$index]</p><hr><br><br>\n";
+        print "<p class = link><a href = \"$lotteMovieLink[$index]\" target = \"blank\">예매하기</a></p><br>\n";
+        print "<p class = link><a href = \"movie.cgi?name=del$movie\">삭제</a></p>\n</td><td></td>\n";
     } else { 
         print "<td></td>";
     }
-    print "<td width = \"40px\" style = \"text-align : right;\"><a href = \"movie.cgi?name=del$movie\">삭제</a></td>\n";
-    print "</tr>\n";
+    #print "<td width = \"40px\" style = \"text-align : right;\"><a href = \"movie.cgi?name=del$movie\">삭제</a></td>\n";
+    if ($colCount % 2 == 0) {
+        print "</tr><tr>";
+    }
+    $colCount++;
 }
+print "</tr>\n";
 print "</table></section>";
 print "</html></body>";
 print "\n\n";

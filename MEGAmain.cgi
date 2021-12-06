@@ -53,7 +53,7 @@ EOP
 
 @megaMovieName = (
     "킬링 카인드: 킬러의 수제자", "돈 룩 업", "태일이", "너에게 가는길",
-    "고스트버스터즈 라이즈", "유체이탈자", "라스트 나잇 인 소호", "언힐러"    
+    "유체이탈자", "고스트버스터즈 라이즈", "라스트 나잇 인 소호", "언힐러"    
 );
 @megaMoviePoster = (
     "https://img.megabox.co.kr/SharedImg/2021/11/19/OSwPwX3tSSnxJZMGljSs2tZESq6uFliO_420.jpg",
