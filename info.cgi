@@ -70,21 +70,21 @@ print "<img src=\"images/Jinuk_Kwak-icon.png\" style = \"box-sizing: inherit;\">
 print h3("Jinuk Kwak");
 print h4("7ehrtnfl\@naver.com");
 print "<a href=\"http://widit.knu.ac.kr/~7ehrtnfl/ithw/hw5-1.htm\">personal page</a>";
-print "</div></td>"
+print "</div></td>";
 
 print "<td><div>";
 print "<img src=\"images/Hyoeun_Sim-icon.png\" style = \"box-sizing: inherit;\">";
 print h3("Hyoeun Sim");
 print h4("f2921641\@naver.com");
 print "<a href=\"http://widit.knu.ac.kr/~f2921641/ithw/hw5.htm\">personal page</a>";
-print "</div></td>"
+print "</div></td>";
 
 print "<td><div>";
 print "<img src=\"images/Gyurim_Park-icon.png\" style = \"box-sizing: inherit;\">";
 print h3("Gyurim Park");
 print h4("guy021898\@naver.com");
 print "<a href=\"http://widit.knu.ac.kr/~guy021898/ithw/hw5.htm\">personal page</a>";
-print "</div></td>"
+print "</div></td>";
 print "</tr>";
 
 print "<tr>";
