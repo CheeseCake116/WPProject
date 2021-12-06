@@ -138,11 +138,11 @@ foreach $movie (@movies) {
     print "<tr>\n";
     $index = substr($movie, 3, 1);
     if (substr($movie, 0, 3) eq "cgv") {
-        print "<td>$cgvMovieName[$index]</td>";
+        print "<td>$cgvMovieName[$index]_CGV</td>";
     } elsif (substr($movie, 0, 3) eq "meg") {
-        print "<td>$megaMovieName[$index]</td>";
+        print "<td>$megaMovieName[$index]_MEGABOX</td>";
     } elsif (substr($movie, 0, 3) eq "lot") {
-        print "<td>$lotteMovieName[$index]</td>";
+        print "<td>$lotteMovieName[$index]_LOTTE CINEMA</td>";
     } else { 
         print "<td></td>";
     }
