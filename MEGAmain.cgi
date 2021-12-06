@@ -4,16 +4,11 @@ use CGI qw(:standard -debug);
 use CGI::Carp qw(fatalsToBrowser);
 
 print header("Content-type: text/html; charset=utf-8");
-print "\n";
-print start_html();
-# print "<!DOCTYPE html>";
-print "\n";
 print "<head>\n";
+print "<title>Untitled Document</title>";
 print "<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n";
-print  "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n";
+print "<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n";
 print "<link href=\"https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap\" rel=\"stylesheet\">\n";
-print "</head>\n";
-
 print <<EOP;
 <style>
     * {
@@ -89,9 +84,9 @@ print "<tr>\n";
 for ($i = 0; $i < $movieCount; $i++) {
     $r = $i + 1;
     print "<td>\n<p class = rank>No. $r</p>\n<div class = poster>\n";
-    print "<a href = \"@megaMovieLink[$i]\" target = \"blank\"><img src = \"@megaMoviePoster[$i]\"></a>\n";
-    print "<p><a href = \"@megaMovieLink[$i]\" target = \"blank\">@megaMovieName[$i]</a></p>\n";
-    print "</div>\n</td>\n";
+    print "<a href = \"$megaMovieLink[$i]\" target = \"blank\"><img src = \"$megaMoviePoster[$i]\"></a>\n";
+    print "<p><a href = \"$megaMovieLink[$i]\" target = \"blank\">$megaMovieName[$i]</a></p>\n";
+    print "</div>\n<p style = \"text-align : right; font-size : 100%;\"><a href = \"theater.cgi?name=meg$i\">추가하기</a></a></td>\n";
     if ($i == 3) { print "</tr><tr>"; }
 }
 print "</tr>\n";
