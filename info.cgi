@@ -52,25 +52,30 @@ print <<EOP;
         text-align : left;
         background-color : rgba(0, 0, 0, 0);
     }
-    div {
-        margin : 10px;
+    h3 {
+        margin : 5px;
+    }
+    h4 {
+        margin : 5px;
+    }
+    a {
+        margin : 5px;
     }
     .link {
-            background-color : rgba(0, 0, 0, 0.2);
+        padding : 5px;
+        background-color : rgba(0, 0, 0, 0.5);
     }
     .link:hover {
-        background-color : rgba(0, 0, 0, 0.5);
+        background-color : rgba(0, 0, 0, 0.7);
     }
 </style>
 EOP
 print "</head>\n";
 print "<html><body>";
 print "<section>";
-print "<table cellspacing=30px>";
-print "<tr><td colspan = '3' style = \"text-align : left;\">";
 print h2("About us");
 print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n";
-print "</td></tr>\n";
+print "<table cellspacing=30px>";
 print "<tr>";
 print "<td><div>";
 print "<img src=\"images/Jinuk_Kwak-icon.png\" style = \"box-sizing: inherit;\">";
@@ -93,13 +98,10 @@ print h4("guy021898\@naver.com");
 print "<a href=\"http://widit.knu.ac.kr/~guy021898/ithw/hw5.htm\" class = link>personal page</a>";
 print "</div></td>";
 print "</tr>";
+print "</table>\n</section>\n";
 
-print "<tr>";
-print "<tr><td colspan = '3' style = \"text-align : left;\">";
 print h2("Source code");
 print "<hr style = \"margin-left : 15%; margin-right : 15%;\">\n";
-print "</td></tr>\n";
-print "<tr><td colspan = '3'>Git hub link</td></tr>";
-
+print "<a href = \"https://github.com/CheeseCake116/WPProject\">SourceCode</a>";
 print "</html></body>";
 print "\n\n";
